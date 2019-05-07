@@ -17,8 +17,11 @@ body {
 
 }*/
 
-p {
-    font-family: 'powerpuffgirlsfont', Arial, sans-serif;
+h1,
+h5,
+p
+ {
+    font-family: 'powerpuff-webfont', Arial, sans-serif;
     font-weight: normal;
     font-style: normal;
 }
