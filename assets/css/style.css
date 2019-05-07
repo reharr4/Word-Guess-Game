@@ -7,14 +7,25 @@
     font-style: normal;
     }
 
-div {
+h1,
+h5 {
     font-family: 'powerpuff_girlsregular';
 }
 
 body {
-    background-image: url(../images/heartsbackground.jpg);
+    background-image: url(../images/hearts.jpg);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
+}
+
+.jumbotron  {
+    text-align: center;
+}
+
+.card-img-top {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
 }
