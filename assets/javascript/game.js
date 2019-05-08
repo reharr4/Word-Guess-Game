@@ -5,12 +5,21 @@ var villainArray = ["Him", "Mojo Jojo", "Fuzzy Lumpkins", "Princess Morbucks", "
 // https://www.kirupa.com/html5/picking_random_item_from_array.htm
 var randomValue = villainArray[Math.floor(Math.random() * villainArray.length)];
 
-if ()
-function alreadyGuessed() {
-  console.log();
-  console.log();
-  console.log ();
-  console.log();
+var wordLength = randomValue.length;
+
+// guesses 20
+var guessed = guessed(wordLength)
+
+var guessedLetters = 
+
+// Functions
+
+function guess(x, y) {
+    return x + y;
+}
+
+function wrong() {
+
 }
 
 document.onkeyup = function(event) {
