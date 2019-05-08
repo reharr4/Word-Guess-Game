@@ -10,7 +10,9 @@ var wordLength = randomValue.length;
 // guesses 20
 var guessed = guessed(wordLength)
 
-var guessedLetters = 
+var guessedLetters = [];
+
+var userGuess;
 
 // Functions
 
