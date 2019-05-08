@@ -1,27 +1,9 @@
-var him = {
+// Global Variables
 
-}
-var mojoJojo = {
+var villainArray = ["Him", "Mojo Jojo", "Fuzzy Lumpkins", "Princess Morbucks", "The Ganggreen Gang", "The Amoeba Boys", "Sedusa", "The Rowdyruff Boys"];
 
-}
-var sedusa = {
-
-}
-var amoebaBoys = {
-
-}
-var fuzzyLumpkins = {
-
-}
-var princessMorbucks = {
-
-}
-var ganggreenGang = {
-
-}
-var rowdyruffBoys = {
-
-}
+// https://www.kirupa.com/html5/picking_random_item_from_array.htm
+var randomValue = villainArray[Math.floor(Math.random() * villainArray.length)];
 
 if ()
 function alreadyGuessed() {
