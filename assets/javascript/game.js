@@ -18,6 +18,9 @@ console.log("random word", randomWord);
 // letter choices
 var letterChoices = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
 
+// computer randomly chooses a word
+var computerGuess = villainArray [Math.floor(Math.random()*villainArray.lenght)];
+
 // guesses remaining
 var updateGuessesRemaining = function() {
   document.querySelector('#guessRemaining').innerHTML = "Guesses Remaining: " + updateGuessesRemaining;
@@ -32,7 +35,7 @@ var updateGuessesSoFar = function(){
   document.querySelector('#let').innerHTML = "Guesses so far: " + guessedLetters.join(', ');
 };
 
-// wordLength = x
+/*// wordLength = x
 var wordLength = randomWord.length;
 
 // guesses 20
@@ -45,7 +48,7 @@ var guessedLetters = [];
 var randomWordLetters = [];
 
 // playerGuess = "x"
-var playerGuess;
+var playerGuess;*/
 
 // reset
 var reset = function(){
@@ -84,9 +87,9 @@ function correctGuess(indexes) {
 
 // player input
 document.onkeyup = function(event) {
-  var playerGuess;
   guessesRemaining--;
-  console.log(playerGuess)
+  var playerGuess;
+  console.log(playerGuess);
 
   guessedLetters.push(playerGuess);
   updateGuessesRemaining();
@@ -99,7 +102,7 @@ document.onkeyup = function(event) {
           alert("Powerpuffs Save the Day!");
           reset();
         } 
-    }else if (guessesRemaining === 0) {
+    } else if (guessesRemaining == 0) {
           losses++;
           document.querySelector('#losses').innerHTML = 'Losses: ' + losses;
           alert("The City of Townsville is under attack!");
