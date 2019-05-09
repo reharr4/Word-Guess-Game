@@ -19,21 +19,23 @@ var guessedLetters = [];
 // randomWordLetters = ["M", "o", "j", "o", "J", "o", "j", "o"]
 var randomWordLetters = [];
 
-// userGuess = "x"
-var userGuess;
+// playerGuess = "x"
+var playerGuess;
 
 // Functions
 // ==============================================================
-function guess(x, y) {
+function guessed(x, y) {
     return x + y;
 }
 
 function wrong() {
-
+  guessedLetters.push(playerGuess);
+  document.getElementById("letters guessed") = guessedLetters();
+  console.log("incorrect guess  ", guessed);
 }
 
 document.onkeyup = function(event) {
-  var him = event.key.toLowerCase();
+  var playerGuess = event.key.toLowerCase();
   if (letter === ) {
     
   }
