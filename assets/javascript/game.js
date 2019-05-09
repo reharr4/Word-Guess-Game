@@ -57,6 +57,6 @@ document.onkeyup = function(event) {
   else if (arraysEqual(blankSpaces, randomWordLetters)) {
   }
   else if (guessed === 0) {
-    alert("")
+    alert("The City of Townsville is under attack!")
   }
 }
