@@ -35,7 +35,7 @@ var updateGuessesSoFar = function(){
   document.querySelector('#let').innerHTML = "Guesses so far: " + guessedLetters.join(', ');
 };
 
-/*// wordLength = x
+// wordLength = x
 var wordLength = randomWord.length;
 
 // guesses 20
@@ -48,7 +48,7 @@ var guessedLetters = [];
 var randomWordLetters = [];
 
 // playerGuess = "x"
-var playerGuess;*/
+var playerGuess;
 
 // reset
 var reset = function(){
@@ -86,6 +86,7 @@ function correctGuess(indexes) {
 
 
 // player input
+// https://www.w3schools.com/jsref/prop_html_innerhtml.asp
 document.onkeyup = function(event) {
   guessesRemaining--;
   var playerGuess;
@@ -106,6 +107,7 @@ document.onkeyup = function(event) {
           losses++;
           document.querySelector('#losses').innerHTML = 'Losses: ' + losses;
           alert("The City of Townsville is under attack!");
+
           reset();
     }
   // else if (searched) {
