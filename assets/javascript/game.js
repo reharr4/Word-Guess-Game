@@ -28,28 +28,37 @@ function guessed(x, y) {
     return x + y;
 }
 
-function wrong() {
+function wrongGuess() {
   guessedLetters.push(playerGuess);
   document.getElementById("letters guessed") = guessedLetters();
-  console.log("wrong guess  ", guessed);
+  guessed--;
+  console.log("wrong guess", guessed);
+}
+
+function correctGuess(indexes) {
+  document.getElementById(villainArray);
+  guessed--;
+  console.log("correct guess", guessed);
 }
 
 document.onkeyup = function(event) {
   var playerGuess = event.key.toLowerCase();
+
+  searchedLetter=randomWord.includes(playerGuess);
   
   if () {
-    console.log("");
+    console.log("Not a valid guess.");
   } 
   else if (blank) {
-    console.log("Guess again");
+    console.log("Guess again.");
   }
-  else if (searched); {
+  else if (searched) {
     console.log
   }
   else {
-    console.log("Not a match");
+    console.log("Not a match.");
     wrongGuess();
-  };
+  }
 
   if (arraysEqual(blankSpaces, randomWordLetters)) {
     alert("Powerpuffs Save the Day!")
@@ -57,6 +66,6 @@ document.onkeyup = function(event) {
   else if (arraysEqual(blankSpaces, randomWordLetters)) {
   }
   else if (guessed === 0) {
-    alert("The City of Townsville is under attack!")
+    alert("The City of Townsville is under attack!");
   }
 }
