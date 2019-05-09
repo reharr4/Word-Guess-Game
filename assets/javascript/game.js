@@ -7,11 +7,15 @@ var villainArray = ["Him", "Mojo Jojo", "Fuzzy Lumpkins", "Princess Morbucks", "
 var randomWord = villainArray[Math.floor(Math.random() * villainArray.length)];
 console.log("random word", randomWord);
 
+// guesses remaining
+var updateGuessesRemaining = function() {
+  document.querySelector('#guessRemaining').innerHTML = "Guesses Remaining: " + updateGuessesRemaining;
+};
 // wordLength = x
 var wordLength = randomWord.length;
 
 // guesses 20
-var guessed = guessed(wordLength);
+var totalGuesses = guessed(wordLength);
 
 // guessedLetters = ["x", "y", "z"]
 var guessedLetters = [];
@@ -21,6 +25,21 @@ var randomWordLetters = [];
 
 // playerGuess = "x"
 var playerGuess;
+
+// reset
+var reset = function(){
+  totalGuesses = 20;
+  guessesRemaining = 20;
+  guessedLetters = [];
+
+  updateplayerGuess();
+  updateguessedLetters();
+  updateGuessesRemaining();
+
+};
+
+updateGuessesRemaining();
+updateplayerGuess();
 
 // Functions
 // ==============================================================
@@ -41,31 +60,42 @@ function correctGuess(indexes) {
   console.log("correct guess", guessed);
 }
 
+
+// player input
 document.onkeyup = function(event) {
-  var playerGuess = event.key.toLowerCase();
+  var playerGuess;
+  guessesRemaining--;
+  console.log(playerGuess)
 
-  searchedLetter=randomWord.includes(playerGuess);
-  
-  if () {
-    console.log("Not a valid guess.");
-  } 
-  else if (blank) {
-    console.log("Guess again.");
-  }
-  else if (searched) {
-    console.log
-  }
-  else {
-    console.log("Not a match.");
-    wrongGuess();
-  }
+  guessedLetters.push(playerGuess);
+  updateGuessesRemaining();
+  updateguessedLetters();
 
-  if (arraysEqual(blankSpaces, randomWordLetters)) {
-    alert("Powerpuffs Save the Day!")
-  }
-  else if (arraysEqual(blankSpaces, randomWordLetters)) {
-  }
-  else if (guessed === 0) {
-    alert("The City of Townsville is under attack!");
-  }
+    if (guessesRemaining > 0) {
+      if (playerGuess === letterToGuess){
+          wins++;
+          document.querySelector('#wins').innerHTML = 'Wins: ' + wins;
+          alert("Powerpuffs Save the Day!");
+          reset();
+        } 
+    }else if (guessesRemaining === 0) {
+          losses++;
+          document.querySelector('#losses').innerHTML = 'Losses: ' + losses;
+          alert("The City of Townsville is under attack!");
+          reset();
+    }
+  // else if (searched) {
+  //  / console.log
+  // }
+  // else {
+    // console.log("Not a match.");
+    // wrongGuess();
+  // }
+
+  // if (arraysEqual(blankSpaces, randomWordLetters)) {
+    
+  // }
+  // else if (arraysEqual(blankSpaces, randomWordLetters)) {
+  // }
+
 }
