@@ -31,12 +31,32 @@ function guessed(x, y) {
 function wrong() {
   guessedLetters.push(playerGuess);
   document.getElementById("letters guessed") = guessedLetters();
-  console.log("incorrect guess  ", guessed);
+  console.log("wrong guess  ", guessed);
 }
 
 document.onkeyup = function(event) {
   var playerGuess = event.key.toLowerCase();
-  if (letter === ) {
-    
+  
+  if () {
+    console.log("");
+  } 
+  else if (blank) {
+    console.log("Guess again");
+  }
+  else if (searched); {
+    console.log
+  }
+  else {
+    console.log("Not a match");
+    wrongGuess();
+  };
+
+  if (arraysEqual(blankSpaces, randomWordLetters)) {
+    alert("Powerpuffs Save the Day!")
+  }
+  else if (arraysEqual(blankSpaces, randomWordLetters)) {
+  }
+  else if (guessed === 0) {
+    alert("")
   }
 }
