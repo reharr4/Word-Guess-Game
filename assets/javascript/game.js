@@ -3,14 +3,35 @@
 
 var villainArray = ["Him", "Mojo Jojo", "Fuzzy Lumpkins", "Princess Morbucks", "The Ganggreen Gang", "The Amoeba Boys", "Sedusa", "The Rowdyruff Boys"];
 
+// score
+var wins = 0;
+var losses = 0;
+var guesses = 9;
+var guessesRemaining = 20;
+var guessedLetters = [];
+var letterToGuess = null;
+
 // https://www.kirupa.com/html5/picking_random_item_from_array.htm
 var randomWord = villainArray[Math.floor(Math.random() * villainArray.length)];
 console.log("random word", randomWord);
+
+// letter choices
+var letterChoices = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
 
 // guesses remaining
 var updateGuessesRemaining = function() {
   document.querySelector('#guessRemaining').innerHTML = "Guesses Remaining: " + updateGuessesRemaining;
 };
+
+// letter to guess
+var updateletterToGuess = function(){
+  this.letterToGuess = this.letterChoices[Math.floor(Math.random() * this.letterChoices.length)];
+};
+
+var updateGuessesSoFar = function(){
+  document.querySelector('#let').innerHTML = "Guesses so far: " + guessedLetters.join(', ');
+};
+
 // wordLength = x
 var wordLength = randomWord.length;
 
