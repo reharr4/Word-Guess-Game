@@ -15,7 +15,8 @@ var letterToGuess = null;
 
 // computer randomly chooses a word
 
-var computerGuess = villainArray [Math.floor(Math.random()*villainArray.lenght)];
+var computerGuess = villainArray [Math.floor(Math.random()*villainArray.length)];
+var computerGuess = computerGuess.toLowerCase();
 
 // guesses remaining
 
@@ -32,7 +33,7 @@ var updateGuessesSoFar = function(){
   document.querySelector('#let').innerHTML = "Guesses so far: " + guessedLetters.join(', ');
 };
 // https://www.kirupa.com/html5/picking_random_item_from_array.htm
-/*var randomWord = villainArray[Math.floor(Math.random() * villainArray.length)];
+var randomWord = villainArray[Math.floor(Math.random() * villainArray.length)];
 console.log("random word", randomWord);
 
 // wordLength = x
@@ -48,7 +49,7 @@ var guessedLetters = [];
 var randomWordLetters = [];
 
 // playerGuess = "x"
-var playerGuess;*/
+var playerGuess;
 
 // reset
 var reset = function(){
