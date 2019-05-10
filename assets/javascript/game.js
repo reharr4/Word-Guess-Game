@@ -18,10 +18,9 @@ var letterChoices = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l',
 // score
 var wins = 0;
 var losses = 0;
-var guesses = 9;
 var guessesRemaining = 20;
-var guessedLetters = [];
-var wordToGuess = null;
+var guessesSoFar = [];
+var wordToGuess = villainArray;
 
 // words to guess
 var updatewordToGuess = function(){
@@ -29,9 +28,9 @@ var updatewordToGuess = function(){
   console.log("letters to guess", wordToGuess);
 };
 
-var updateplayerGuess = function(){
-  document.querySelector('#let').innerHTML = "Guesses so far: " + guessedLetters.join(', ');
-  console.log("letters already guessed", guessedLetters);
+var updateguessesSoFar = function(){
+  document.querySelector('#let').innerHTML = "Guesses so far: " + guessesSoFar.join(', ');
+  console.log("guesses so far", guessesSoFar);
 };
 
 // computer chooses word
@@ -46,7 +45,7 @@ for (var i = 0; i < villainArray.length; i++) {
   console.log("answer");
 }
 
-var remainingLetters = villainArray.length;
+/*var remainingLetters = villainArray.length;*/
 
 // guesses remaining
 var updateguessesRemaining = function() {
@@ -56,46 +55,45 @@ var updateguessesRemaining = function() {
 
 // reset
 var reset = function(){
-  totalGuesses = 20;
   guessesRemaining = 20;
-  guessedLetters = [];
+  guessesSoFar = [];
 
-  updateplayerGuess();
-  updateguessedLetters();
+  updateguessesSoFar();
+  updatewordToGuess();
   updateguessesRemaining();
 
 };
 
 updateguessesRemaining();
-updateplayerGuess();
+updateguessesSoFar();
 
-// Functions
-// ==============================================================
 
 // player input
 
 // https://www.w3schools.com/jsref/prop_html_innerhtml.asp
-  document.onkeyup = function(event) {
+document.onkeyup = function(event) {
   guessesRemaining--;
   var playerGuess = event.key.toLowerCase();
   console.log(playerGuess);
 
-  guessedLetters.push(playerGuess);
+  guessesSoFar.push(playerGuess);
   updateguessesRemaining();
-  updateguessedLetters();
+  updateguessesSoFar();
 
     if (guessesRemaining > 0) {
-      answerArray.join(" ");
+        // answerArray.join(" ");
       if (playerGuess === wordToGuess){
           wins++;
           document.querySelector('#wins').innerHTML = 'Wins: ' + wins;
           alert("Powerpuffs Save the Day!");
+          console.log(wins);
           reset();
         } 
-    } else if (guessesRemaining == 0) {
+    } else if (guessesRemaining === 0) {
           losses++;
           document.querySelector('#losses').innerHTML = 'Losses: ' + losses;
           alert("The City of Townsville is under attack!");
+          console.log(losses);
 
           reset();
     }
