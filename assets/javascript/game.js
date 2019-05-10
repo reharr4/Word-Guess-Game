@@ -2,6 +2,8 @@
 // =========================================================================
 // Available choices
 var villainArray = ["Him", "Mojo Jojo", "Fuzzy Lumpkins", "Princess Morbucks", "The Ganggreen Gang", "The Amoeba Boys", "Sedusa", "The Rowdyruff Boys"];
+// letter choices
+var letterChoices = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
 
 // score
 var wins = 0;
@@ -21,25 +23,17 @@ var updateGuessesRemaining = function() {
   document.querySelector('#guessesRemaining').innerHTML = "Guesses Remaining: " + updateGuessesRemaining;
 };
 
-// https://www.kirupa.com/html5/picking_random_item_from_array.htm
-var randomWord = villainArray[Math.floor(Math.random() * villainArray.length)];
-console.log("random word", randomWord);
-
-// letter choices
-var letterChoices = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
-
-
-
-
-
-// letter to guess
-var updateletterToGuess = function(){
+// words to guess
+var updatewordToGuess = function(){
   this.letterToGuess = this.letterChoices[Math.floor(Math.random() * this.letterChoices.length)];
 };
 
 var updateGuessesSoFar = function(){
   document.querySelector('#let').innerHTML = "Guesses so far: " + guessedLetters.join(', ');
 };
+// https://www.kirupa.com/html5/picking_random_item_from_array.htm
+/*var randomWord = villainArray[Math.floor(Math.random() * villainArray.length)];
+console.log("random word", randomWord);
 
 // wordLength = x
 var wordLength = randomWord.length;
@@ -54,7 +48,7 @@ var guessedLetters = [];
 var randomWordLetters = [];
 
 // playerGuess = "x"
-var playerGuess;
+var playerGuess;*/
 
 // reset
 var reset = function(){
@@ -73,7 +67,7 @@ updateplayerGuess();
 
 // Functions
 // ==============================================================
-function guessed(x, y) {
+/*function guessed(x, y) {
     return x + y;
 }
 
@@ -88,7 +82,7 @@ function correctGuess(indexes) {
   document.getElementById(villainArray);
   guessed--;
   console.log("correct guess", guessed);
-}
+}*/
 
 
 // player input
@@ -96,7 +90,7 @@ function correctGuess(indexes) {
 // https://www.w3schools.com/jsref/prop_html_innerhtml.asp
 document.onkeyup = function(event) {
   guessesRemaining--;
-  var playerGuess;
+  var playerGuess = event.key;
   console.log(playerGuess);
 
   guessedLetters.push(playerGuess);
@@ -110,7 +104,7 @@ document.onkeyup = function(event) {
           alert("Powerpuffs Save the Day!");
           reset();
         } 
-    } else if (guessesRemaining === 0) {
+    } else if (guessesRemaining == 0) {
           losses++;
           document.querySelector('#losses').innerHTML = 'Losses: ' + losses;
           alert("The City of Townsville is under attack!");
