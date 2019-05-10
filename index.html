@@ -26,27 +26,24 @@
         <div class="card-group">
             <div style="background: transparent !important" class="card">
               <img src="assets/images/PowerpuffGirls.jpg" class="card-img-top" alt="Sugar and spice and everything nice.">
-              <div class="card-body">
-              </div>
-            </div>
-
-            <div style="background: transparent !important" class="card">
-              <img src="..." class="card-img-top" alt="...">
-              <div class="card-body">
-                <h5 class="card-title">Letters already guessed</h5>
+              <div class="card-body">              
               </div>
             </div>
 
             <div style="background: transparent !important" class="card">
               <div class="card-body">
-                <h5 class="card-title">Wins</h5>
-                <br>
-                <h5 class="card-title">Losses</h5>
-                <br>
-                <h5 class="card-title">Guesses Remaining</h5>
+                <div id = "game">
+                  <ul class="list-group">
+                    <li class="list-group-item"><p id="wins">Wins: </p></li>
+                    <li class="list-group-item"><p id="losses">Losses: </p></li>
+                    <li class="list-group-item"><p id="guessesRemaining">Guesses Remaining: </p></li>
+                    <li class="list-group-item"><p id="guessedLetters">Already Guessed: </p></li>
+                  </ul>
+                </div>
               </div>
             </div>
         </div>
 
+        <script type="text/javascript" src="assets/javascript/game.js"></script>
 </body>
 </html>
