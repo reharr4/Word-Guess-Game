@@ -13,30 +13,28 @@ var guessesRemaining = 20;
 var guessedLetters = [];
 var letterToGuess = null;
 
-// computer randomly chooses a word
-
-var computerGuess = villainArray [Math.floor(Math.random()*villainArray.length)];
-var computerGuess = computerGuess.toLowerCase();
-
 // guesses remaining
-
-var updateGuessesRemaining = function() {
-  document.querySelector('#guessesRemaining').innerHTML = "Guesses Remaining: " + GuessesRemaining;
+var updateguessesRemaining = function() {
+  document.querySelector('#guessesRemaining').innerHTML = "Guesses Remaining: " + guessesRemaining;
+  console.log("guesses remaining", guessesRemaining);
 };
 
 // words to guess
-var updatewordToGuess = function(){
+var updateletterToGuess = function(){
   this.letterToGuess = this.letterChoices[Math.floor(Math.random() * this.letterChoices.length)];
+  console.log("letters to guess", letterToGuess);
 };
 
 var updateGuessesSoFar = function(){
   document.querySelector('#let').innerHTML = "Guesses so far: " + guessedLetters.join(', ');
 };
-// https://www.kirupa.com/html5/picking_random_item_from_array.htm
-var randomWord = villainArray[Math.floor(Math.random() * villainArray.length)];
-console.log("random word", randomWord);
 
-// wordLength = x
+// computer chooses word
+// https://www.kirupa.com/html5/picking_random_item_from_array.htm
+var computerChoice = villainArray[Math.floor(Math.random() * villainArray.length)];
+console.log("random word", computerChoice);
+
+/*// wordLength = x
 var wordLength = randomWord.length;
 
 // guesses 20
@@ -49,7 +47,7 @@ var guessedLetters = [];
 var randomWordLetters = [];
 
 // playerGuess = "x"
-var playerGuess;
+var playerGuess;*/
 
 // reset
 var reset = function(){
@@ -59,11 +57,11 @@ var reset = function(){
 
   updateplayerGuess();
   updateguessedLetters();
-  updateGuessesRemaining();
+  updateguessesRemaining();
 
 };
 
-updateGuessesRemaining();
+updateguessesRemaining();
 updateplayerGuess();
 
 // Functions
@@ -72,7 +70,7 @@ updateplayerGuess();
     return x + y;
 }
 
-function wrongGuess() {
+/*function wrongGuess() {
   guessedLetters.push(playerGuess);
   document.getElementById("letters guessed") = guessedLetters();
   guessed--;
