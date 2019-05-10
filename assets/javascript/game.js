@@ -20,7 +20,7 @@ var computerGuess = villainArray [Math.floor(Math.random()*villainArray.lenght)]
 // guesses remaining
 
 var updateGuessesRemaining = function() {
-  document.querySelector('#guessesRemaining').innerHTML = "Guesses Remaining: " + updateGuessesRemaining;
+  document.querySelector('#guessesRemaining').innerHTML = "Guesses Remaining: " + GuessesRemaining;
 };
 
 // words to guess
