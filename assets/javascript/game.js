@@ -1,6 +1,6 @@
 // Global Variables
 // =========================================================================
-
+// Available choices
 var villainArray = ["Him", "Mojo Jojo", "Fuzzy Lumpkins", "Princess Morbucks", "The Ganggreen Gang", "The Amoeba Boys", "Sedusa", "The Rowdyruff Boys"];
 
 // score
@@ -11,6 +11,16 @@ var guessesRemaining = 20;
 var guessedLetters = [];
 var letterToGuess = null;
 
+// computer randomly chooses a word
+
+var computerGuess = villainArray [Math.floor(Math.random()*villainArray.lenght)];
+
+// guesses remaining
+
+var updateGuessesRemaining = function() {
+  document.querySelector('#guessesRemaining').innerHTML = "Guesses Remaining: " + updateGuessesRemaining;
+};
+
 // https://www.kirupa.com/html5/picking_random_item_from_array.htm
 var randomWord = villainArray[Math.floor(Math.random() * villainArray.length)];
 console.log("random word", randomWord);
@@ -18,13 +28,9 @@ console.log("random word", randomWord);
 // letter choices
 var letterChoices = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
 
-// computer randomly chooses a word
-var computerGuess = villainArray [Math.floor(Math.random()*villainArray.lenght)];
 
-// guesses remaining
-var updateGuessesRemaining = function() {
-  document.querySelector('#guessRemaining').innerHTML = "Guesses Remaining: " + updateGuessesRemaining;
-};
+
+
 
 // letter to guess
 var updateletterToGuess = function(){
@@ -86,6 +92,7 @@ function correctGuess(indexes) {
 
 
 // player input
+
 // https://www.w3schools.com/jsref/prop_html_innerhtml.asp
 document.onkeyup = function(event) {
   guessesRemaining--;
@@ -110,18 +117,4 @@ document.onkeyup = function(event) {
 
           reset();
     }
-  // else if (searched) {
-  //  / console.log
-  // }
-  // else {
-    // console.log("Not a match.");
-    // wrongGuess();
-  // }
-
-  // if (arraysEqual(blankSpaces, randomWordLetters)) {
-    
-  // }
-  // else if (arraysEqual(blankSpaces, randomWordLetters)) {
-  // }
-
-}
+};
