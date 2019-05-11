@@ -22,22 +22,25 @@ var wordToGuess = villainArray;
 // words to guess
 var updatewordToGuess = function(){
   this.wordToGuess = this.letterChoices[Math.floor(Math.random() * this.letterChoices.length)];
+  console.log("wordToGuess", wordToGuess);
 };
 
 var updateguessesSoFar = function(){
   document.querySelector('#guessesSoFar').innerHTML="Guesses so far: " + guessesSoFar.join(' , ');
+  console.log("guessesSoFar", guessesSoFar);
 };
 
 // computer chooses word
 // https://www.kirupa.com/html5/picking_random_item_from_array.htm
 var computerChoice = villainArray[Math.floor(Math.random() * villainArray.length)];
+console.log("computerChoice", computerChoice);
+
 
 // guesses remaining
 var updateguessesRemaining = function() {
   document.querySelector('#guessesRemaining').innerHTML="Guesses Remaining: " + guessesRemaining;
+  console.log("guessesRemaining", guessesRemaining);
 };
-
-var remainingLetters = villainArray.length;
 
 // reset
 var reset = function(){
@@ -50,14 +53,6 @@ var reset = function(){
 
 };
 
-function reWriteStats(){
-console.log("guessesRemaining", guessesRemaining);
-console.log("computerChoice", computerChoice);
-console.log("losses", losses);
-console.log("wins", wins);
-console.log("guessesSoFar", guessesSoFar);
-console.log("wordToGuess", wordToGuess);
-}
 
 // player input
 
@@ -74,14 +69,15 @@ document.onkeyup = function(event) {
           wins++;
           document.querySelector('#wins').innerHTML = 'Wins: ' + wins;
           alert("Powerpuffs Save the Day!");
-          reWriteStats();
+          console.log("wins", wins);
 
           reset();
+          
     } else if (guessesRemaining == 0) {
           losses++;
           document.querySelector('#losses').innerHTML = 'Losses: ' + losses;
           alert("The City of Townsville is under attack!");
-          reWriteStats();
+          console.log("losses", losses);
 
           reset();
     }
