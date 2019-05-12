@@ -106,7 +106,6 @@ document.onkeyup = function(event) {
     updateguessesRemaining();
     updateguessesSoFar();
   
-
   if (playerGuess == computerChoice) {
           wins++;
           document.querySelector('#wins').innerHTML = 'Wins: ' + wins;
