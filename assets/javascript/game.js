@@ -17,9 +17,10 @@ var wins = 0;
 var losses = 0;
 var guessesRemaining = 20;
 var guessesSoFar = [];
-var wordToGuess = villainArray;
-
+var wordToGuess;
+var wordToGuessLetters = [];
 var playerGuess;
+var blankSpaces = [];
 
 // words to guess
 var updatewordToGuess = function(){
@@ -33,26 +34,46 @@ var updateguessesSoFar = function(){
 };
 
 // Count without spaces: https://stackoverflow.com/questions/26389745/how-to-count-the-number-of-characters-without-spaces
-     wordLength = 20
-     var wordLength = villainArray.length
+     wordLength = [];
+     var wordLength = villainArray.length;
 
-var blankSpaces = [];
-     for (i = 0; i < wordLength; i++) {
-         blankSpaces.push(" _ ");
+/*var blankSpaces = [];
+     for (i = 0; i < wordLength; i ++) {
+        villainArray[i] = villainArray.charAt(i);
+        villainArray[i] = "_";
+     }
+         villainArray.push(" _ ");
          if (villainArray[i] === " ") {
              blankSpaces.splice(i, 1, "&nbsp;");
              document.getElementById("villains").innerHTML = blankSpaces.join(" ");
          } else {
             document.getElementById("villains").innerHTML = blankSpaces.join(" ");
-         };
-    };
+         }*/
+
 
 
 // computer chooses word
 // https://www.kirupa.com/html5/picking_random_item_from_array.htm
 var computerChoice = villainArray[Math.floor(Math.random() * villainArray.length)];
-console.log("computerChoice", computerChoice);
+ console.log("computerChoice", computerChoice);
+function choosewordToGuess() {
+  blankSpaces = [];
+  wordToGuess = villainArray[Math.floor(Math.random() * villainArray.length)].toLowerCase();
 
+  if (wordToGuess.search(" ")) {
+      console.log("This word has a space");
+      for (var x = 0; x < villainArray.length; x++) {
+          blankSpaces.push(" _ ");
+      }if (villainArray[x] === " ") {
+              blankSpaces.splice(x, 1, "&nbsp;");
+              document.getElementById("villains").innerHTML = blankSpaces.join(" ");
+          } else {
+              wordToGuessLetters.splice(x, 1, " _ ");
+          }
+      }
+}
+      console.log("wordToGuessLetters", wordToGuessLetters);
+      console.log("blank spaces", blankSpaces);
 
 // guesses remaining
 var updateguessesRemaining = function() {
@@ -80,7 +101,6 @@ var reset = function(){
 document.onkeyup = function(event) {
   playerGuess = event.key.toLowerCase();
   playerGuess = playerGuess.replace(/[^A-Za-z]/g, "");
-
 
     guessesSoFar.push(playerGuess);
     updateguessesRemaining();
