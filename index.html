@@ -2,63 +2,77 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hangman</title>
-    <link rel="stylesheet" type="text/css" href="../Word-Guess-Game/assets/css/reset.css">
-    <link rel="stylesheet" href="assets/css/style.css" type="text/css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="assets/css/fonts/stylesheet.css" type="text/css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hangman</title>
+  <link rel="stylesheet" type="text/css" href="../Word-Guess-Game/assets/css/reset.css">
+  <link rel="stylesheet" href="assets/css/style.css" type="text/css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="assets/css/fonts/stylesheet.css" type="text/css" />
 </head>
 
-<body>    
-    
-        <div style="background: transparent !important" class="jumbotron">
-            <div class="container">
-                <h1 class="display-4">Powerpuff Girls Hangman</h1>
-                <br>
-                <br>
-                <h2 class="lead">Help Blossom, Bubbles, and Buttercup keep the city of Townsville crime free.</h2>
-                <hr class="my-4">
-                <p>Defeat the villains by guessing their name within 20 letters.</p>
-                <br>
-                <br>
-                <p>Press any key to get started!</p>
-            </div>
-        </div>
+<body>
+
+  <div style="background: transparent !important" class="jumbotron">
+    <div class="container">
+      <h1 class="display-4">Powerpuff Girls Hangman</h1>
+      <br>
+      <br>
+      <h2 class="lead">Help Blossom, Bubbles, and Buttercup keep the city of Townsville crime free.</h2>
+      <hr class="my-4">
+      <p>Defeat the villains by guessing their name within 20 letters.</p>
+      <br>
+      <br>
+      <p>Press any key to get started!</p>
+    </div>
+  </div>
 
 
-      <div class="card-group">
-            <div style="background: transparent !important" class="card">
-              <div class="card-body">
-              <img src="assets/images/PowerpuffGirls.jpg" class="card-img-top" alt="Sugar and spice and everything nice.">
-              </div>
-            </div>
-
-            <div style="background: transparent !important" class="card">
-              <div class="card-body">
-                  <ul class="list-group">
-                    <li class="list-group-item"><p>Answer: </p></li>
-                    <li class="list-group-item"><p id="villains"></p></li>
-                  </ul>
-              </div>
-            </div>
-
-            <div style="background: transparent !important" class="card">
-              <div class="card-body">
-                <div id ="game">
-                  <ul class="list-group">
-                    <li class="list-group-item"><p id="winsTotal">Wins: </p></li>
-                    <li class="list-group-item"><p id="lossesTotal">Losses: </p></li>
-                    <li class="list-group-item"><p id="guessesRemaining">Guesses Remaining: </p></li>
-                    <li class="list-group-item"><p id="guessesSoFar">Guesses So Far: </p></li>
-                  </ul>
-                </div>
-              </div>
-            </div>
+  <div class="card-group">
+    <div style="background: transparent !important" class="card">
+      <div class="card-body">
+        <img src="assets/images/PowerpuffGirls.jpg" class="card-img-top" alt="Sugar and spice and everything nice.">
       </div>
+    </div>
 
-        <script src="assets/javascript/game.js"></script>
+    <div style="background: transparent !important" class="card">
+      <div class="card-body">
+        <ul class="list-group">
+          <li class="list-group-item">
+            <p>Answer: </p>
+          </li>
+          <li class="list-group-item">
+            <p id="villains"></p>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div style="background: transparent !important" class="card">
+      <div class="card-body">
+        <div id="game">
+          <ul class="list-group">
+            <li class="list-group-item">
+              <p id="winsTotal">Wins: </p>
+            </li>
+            <li class="list-group-item">
+              <p id="lossesTotal">Losses: </p>
+            </li>
+            <li class="list-group-item">
+              <p id="guessesRemaining">Guesses Remaining: </p>
+            </li>
+            <li class="list-group-item">
+              <p id="guessesSoFar">Guesses So Far: </p>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="assets/javascript/game.js"></script>
 
 </body>
+
 </html>
