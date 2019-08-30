@@ -1,7 +1,6 @@
 // window.onload = function () {
 var wordGuessGame = {
 // Object of all words that can be guessed and their picture
-// var alphabet = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'];
 villains:{
   him:{
     picture: "him.jpg",
@@ -30,8 +29,8 @@ villains:{
 },
 
 // variables that set initial state of game
-wins: 0;
-wordinPlay: null,
+wins: 0,
+wordInPlay: null,
 lettersOfWord: [],
 matchedLetters: [],
 guessedLetters: [],
@@ -40,12 +39,12 @@ totalGuesses: 0,
 letterGuessed: null,
 
 setupGame: function(){
-  // pick a random word (villian)
+  // pick a random word (villain)
   var objKeys = Object.keys(this.villains);
-  this.wordinPlay = objKeys[Math.floor(Math.random() * objKeys.length)];
+  this.wordInPlay = objKeys[Math.floor(Math.random() * objKeys.length)];
 
   // split chosen word into individual letters
-  this.lettersOfWord = this.wordinPlay.split("");
+  this.lettersOfWord = this.wordInPlay.split("");
   // set letters of word to be underscores
   this.rebuildWord();
   // set number of guesses user gets
@@ -132,7 +131,7 @@ rebuildWord: function(){
 // restart game by resetting variables
 restartGame: function() {
   document.querySelector("#guessed-letters").innerHTML = "";
-  this.wordinPlay = null;
+  this.wordInPlay = null;
   this.lettersOfWord = [];
   this.matchedLetters = [];
   this.guessedLetters = [];
@@ -168,12 +167,12 @@ if (win){
   // update wins on page
   document.querySelector("#wins").innerHTML = this.wins;
 
-  // update villian on page
-  document.querySelector("#villain").innerHTML = this.villains[this.wordinPlay];
+  // update villain on page
+  document.querySelector("#villain").innerHTML = this.villains[this.wordInPlay];
 
   // update image of villain
   document.querySelector("#villain-div").innerHTML = "<img class='villain-image' src='../images/" +
-  this.villains[this.wordinPlay].picture + " 'alt='" + "'>";
+  this.villains[this.wordInPlay].picture + " 'alt='" + "'>";
 
   // return true to restart game in updatePage
   return true;
@@ -196,161 +195,3 @@ document.onkeyup = function(event){
     wordGuessGame.updatePage(wordGuessGame.letterGuessed);
   }
 };
-
-// index of questions
-var questionIndex = 0;
-
-function renderWord () {
-  // if there are more questions, render the next
-  if (questionIndex <= (villains.length - 1)){
-    document.querySelector(#question).innerHTML = villains[questionIndex].villains;
-  }
-  // if there are no more questions, end game
-  else {
-    document.querySelector(#question).innerHTML = "The City of Townsville is under attack!";
-    document.querySelector(#question).innerHTML = "Final Score: " + wins-losses + " out of " + villains.length;
-  }
-}
-// // update score
-function updateWins(){
-  document.querySelector("#wins").innerHTML = "Wins: " + wins;
-}
-function updateLosses(){
-  document.querySelector("#losses").innerHTML = "Losses: " + losses;
-}
-// // Get elements
-// var showWins = document.getElementById("winsTotal");
-// var showLosses = document.getElementById("lossesTotal");
-
-// -------------------------------------------------
-// call functions to start game
-renderWord();
-updateWins();
-updateLosses();
-
-// run the following function when user presses alpha key
-document.onkeyup = function(event) {
-
-  // if there are no more questions, stop function
-  if (questionIndex === villains.length) {
-    return;
-  }
-
-  // determine which key was pressed and set to playerGuess variable
-  var playerGuess = event.key.toLowerCase();
-
-  // only run if alpha key were pressed
-  if (playerGuess ===/[^A-Za-z]/$){
-    if (playerGuess === villains[questionIndex]){
-      alert("Correct!");
-      wins++;
-      updateWins();
-    }
-    else {
-      alert("Wrong!");
-      losses++;
-      updateLosses();
-    }
-    // increment questionIndex variable and call renderWord function
-    questionIndex++;
-    renderWord();
-  }
-};
-// // words to guess
-// var updatewordToGuess = function(){
-//   this.wordToGuess = this.letterChoices[Math.floor(Math.random() * this.letterChoices.length)];
-//   console.log("wordToGuess", wordToGuess);
-// };
-
-// var updateguessesSoFar = function(){
-//   document.querySelector('#guessesSoFar').innerHTML="Guesses so far: " + guessesSoFar.join(' , ');
-//   console.log("guessesSoFar", guessesSoFar);
-// };
-
-// Count without spaces: https://stackoverflow.com/questions/26389745/how-to-count-the-number-of-characters-without-spaces
-    //  wordLength = [];
-    //  var wordLength = villains.length;
-
-/*var blankSpaces = [];
-     for (i = 0; i < wordLength; i ++) {
-        villains[i] = villains.charAt(i);
-        villains[i] = "_";
-     }
-         villains.push(" _ ");
-         if (villains[i] === " ") {
-             blankSpaces.splice(i, 1, "&nbsp;");
-             document.getElementById("villains").innerHTML = blankSpaces.join(" ");
-         } else {
-            document.getElementById("villains").innerHTML = blankSpaces.join(" ");
-         }*/
-
-
-
-// computer chooses word
-// https://www.kirupa.com/html5/picking_random_item_from_array.htm
-// var computerChoice = villains[Math.floor(Math.random() * villains.length)];
-//  console.log("computerChoice", computerChoice);
-// function choosewordToGuess() {
-//   blankSpaces = [];
-//   wordToGuess = villains[Math.floor(Math.random() * villains.length)].toLowerCase();
-
-//   if (wordToGuess.search(" ")) {
-//       console.log("This word has a space");
-//       for (var x = 0; x < villains.length; x++) {
-//           blankSpaces.push(" _ ");
-//       }if (villains[x] === " ") {
-//               blankSpaces.splice(x, 1, "&nbsp;");
-//               document.getElementById("villains").innerHTML = blankSpaces.join(" ");
-//           } else {
-//               wordToGuessLetters.splice(x, 1, " _ ");
-//           }
-//       }
-// }
-//       console.log("wordToGuessLetters", wordToGuessLetters);
-//       console.log("blank spaces", blankSpaces);
-
-// guesses remaining
-// var updateguessesRemaining = function() {
-//   document.querySelector('#guessesRemaining').innerHTML="Guesses Remaining: " + guessesRemaining;
-//   this.guessesRemaining = this.guessesRemaining - 1;
-//   console.log("guessesRemaining", guessesRemaining);
-// };
-
-// reset
-// var reset = function(){
-//   guessesRemaining = 20;
-//   guessesSoFar = [];
-
-//   updateguessesSoFar();
-//   updatewordToGuess();
-//   updateguessesRemaining();
-
-// };
-
-
-
-// player input
-// https://www.w3schools.com/jsref/prop_html_innerhtml.asp
-// https://stackoverflow.com/questions/18239430/cannot-set-property-innerhtml-of-null
-// document.onkeyup = function(event) {
-//   playerGuess = event.key.toLowerCase();
-//   playerGuess = playerGuess.replace(, "");
-
-//     guessesSoFar.push(playerGuess);
-//     updateguessesRemaining();
-//     updateguessesSoFar();
-  
-//   if (playerGuess == computerChoice) {
-//           wins++;
-//           document.querySelector('#wins').innerHTML = 'Wins: ' + wins;
-//           alert("Powerpuffs Save the Day!");
-//           console.log("wins", wins);
-//           reset();  
-//     } else if (guessesRemaining === 0) {
-//           losses++;
-//           document.querySelector('#losses').innerHTML = 'Losses: ' + losses;
-//           alert("The City of Townsville is under attack!");
-//           console.log("losses", losses);
-//           reset();
-//     }
-// };
