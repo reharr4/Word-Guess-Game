@@ -11,14 +11,13 @@ body {
 h1,
 h2,
 h3,
-h4,
-h5,
 p
  {
     font-family: 'powerpuff-webfont', Arial, sans-serif;
     font-weight: normal;
     font-style: normal;
     color: rgb(233, 35, 127);
+    text-align: center
 }
 
 .container {
@@ -26,7 +25,13 @@ p
     align-content: center;
 }
 
-.card-group {
+#villain-div,
+#current-word-section,
+#guesses-remaining-section,
+#guessed-letters-section {
     text-align: center;
     align-content: center;
+}
+img {
+    height: 250px
 }
