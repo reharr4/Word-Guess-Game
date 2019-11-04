@@ -172,7 +172,7 @@ if (win){
 
   // update image of villain
   document.querySelector("#villain-div").innerHTML = "<img class='villain-image' src='../images/" +
-  this.villains[this.wordInPlay].picture + " 'alt='" + "'>";
+  this.villains[this.wordInPlay].picture + "' alt='" + "'>";
 
   // return true to restart game in updatePage
   return true;
