@@ -11,7 +11,11 @@ body {
 h1,
 h2,
 h3,
-p
+p,
+#guesses-remaining,
+#guessed-letters,
+#current-word,
+#wins
  {
     font-family: 'powerpuff-webfont', Arial, sans-serif;
     font-weight: normal;
@@ -28,7 +32,8 @@ p
 #villain-div,
 #current-word-section,
 #guesses-remaining-section,
-#guessed-letters-section {
+#guessed-letters-section,
+#wins {
     text-align: center;
     align-content: center;
 }
