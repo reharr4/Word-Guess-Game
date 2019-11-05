@@ -14,7 +14,7 @@ villains:{
   princessmorbucks:{
     picture: "princessmorbucks.jpg"
   },
-  ganggreengang:{
+  gangreengang:{
     picture: "ganggreengang.jpg"
   },
   amoebaboys:{
@@ -166,13 +166,9 @@ if (win){
   this.wins = this.wins + 1;
   // update wins on page
   document.querySelector("#wins").innerHTML = this.wins;
-
-  // update villain on page
-  document.querySelector("#villain").innerHTML = this.villains[this.wordInPlay];
-
   // update image of villain
   document.querySelector("#villain-div").innerHTML = "<img class='villain-image' src='../images/" +
-  this.villains[this.wordInPlay].picture + "' alt='" + "'>";
+  this.villains[this.wordInPlay].picture + "' alt='>";
 
   // return true to restart game in updatePage
   return true;
