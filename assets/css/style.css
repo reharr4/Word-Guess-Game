@@ -4,18 +4,35 @@ body {
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
+    align-content: center;
 }   
+#villainContainer {
+    text-align: center;
+    align-content: center;
+}
 #wrapper {
     margin-top: 1.5em;
 }   
-
-#game-section{
-    background-color: wheat;
-    width: 50em;
-    margin-left: 17em;
-    margin-top: .2em;
+#villain-div {
+    text-align: center;
     align-content: center;
-    padding: 1em;
+    margin-bottom: .5em;
+}
+img {
+    height: 250px
+}
+/* #game-section{
+    background-color: wheat;
+    /* width: 50em; */
+    /* margin-left: 17em;
+    margin-top: .2em; */
+    /* align-content: center; */
+    /* display: block; */
+    /* text-align: center; */
+    /* padding: 1em;
+} */
+#gameContainer {
+    background-color: wheat;
 
 }
 p {
@@ -38,30 +55,17 @@ p,
     text-align: center;
 }
 
-.container {
-    text-align: center;
-    align-content: center;
-}
-
-#villain-div {
-    text-align: center;
-    align-content: center;
-    margin-bottom: .5em;
-}
-img {
-    height: 250px
-}
 
 /* media queries */
 @media only screen 
   and (min-width: 236px) 
   and (max-width: 480px)
   and (-webkit-min-device-pixel-ratio: 2) {
-    /* body {
+    body {
         width: 90%;
         max-width: 90%;
         margin: auto;
-    } */
+    }
     #wrapper{
         width: 100%;
     }
