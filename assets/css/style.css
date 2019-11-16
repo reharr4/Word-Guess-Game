@@ -54,7 +54,9 @@ p,
     color: rgb(233, 35, 127);
     text-align: center;
 }
-
+#current-word {
+    font-size: 1.6em;
+}
 
 /* media queries */
 @media only screen 
